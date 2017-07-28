@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "764972703418",
+    "firebase_url": "https://socialapp-eb122.firebaseio.com",
+    "project_id": "socialapp-eb122",
+    "storage_bucket": "socialapp-eb122.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:764972703418:android:a1aea4328c3089f4",
+        "android_client_info": {
+          "package_name": "com.raspberry.socialapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "764972703418-885qsjols60s46j8f6juek9m9pcc43ep.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC8oGw25ryrVCwxyiwdp8oKWUlIQFL6wAU"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
