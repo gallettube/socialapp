@@ -22,11 +22,4 @@
         app:headerLayout="@layout/nav_header_main"
         app:menu="@menu/activity_main_drawer" />
 
-    <Button
-        android:onClick="logout"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/com_facebook_loginview_log_out_action"
-        />
-
 </android.support.v4.widget.DrawerLayout>
