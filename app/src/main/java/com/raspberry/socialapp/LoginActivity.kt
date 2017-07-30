@@ -4,8 +4,6 @@ import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.widget.Toast
-import com.facebook.FacebookSdk;
-import com.facebook.appevents.AppEventsLogger;
 import com.facebook.AccessToken
 import com.facebook.CallbackManager
 import com.facebook.FacebookCallback
@@ -30,6 +28,7 @@ class LoginActivity : AppCompatActivity() {
         login_button.registerCallback(callbackManager, object : FacebookCallback<LoginResult> {
             override fun onSuccess(loginResult: LoginResult) {
                 handleFacebookAccessToken(loginResult.accessToken)
+                Toast.makeText(applicationContext, "Correct login", Toast.LENGTH_SHORT)
             }
 
             override fun onCancel() {
@@ -45,7 +44,9 @@ class LoginActivity : AppCompatActivity() {
         firebaseAuthListener = FirebaseAuth.AuthStateListener { firebaseAuth ->
             val user = firebaseAuth.currentUser
             if (user != null) {
+                Toast.makeText(applicationContext, user.uid, Toast.LENGTH_SHORT)
                 goMainScreen()
+
             }
         }
 
@@ -61,7 +62,6 @@ class LoginActivity : AppCompatActivity() {
         val credential = FacebookAuthProvider.getCredential(accessToken.token)
         FirebaseAuth.getInstance()!!.signInWithCredential(credential).addOnCompleteListener(this) { task ->
             if (!task.isSuccessful) {
-
                 Toast.makeText(applicationContext, "Error connecting firebase login", Toast.LENGTH_LONG).show()
             }
         }

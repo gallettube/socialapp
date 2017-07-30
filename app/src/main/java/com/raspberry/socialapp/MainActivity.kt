@@ -11,8 +11,6 @@ import android.view.Menu
 import android.view.MenuItem
 import com.facebook.AccessToken
 import com.facebook.login.LoginManager
-import com.facebook.FacebookSdk
-import com.facebook.appevents.AppEventsLogger
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.app_bar_main.*
 
@@ -22,9 +20,7 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        if(AccessToken.getCurrentAccessToken() == null){
-            goLoginScreen();
-        }
+
 
         setSupportActionBar(toolbar)
 
@@ -44,6 +40,10 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
 
         nav_view.setNavigationItemSelectedListener(this)
+
+        if(AccessToken.getCurrentAccessToken() == null){
+            goLoginScreen()
+        }
     }
 
     private fun goLoginScreen() {
@@ -89,8 +89,8 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         } else if (id == R.id.nav_share) {
         } else if (id == R.id.nav_send) {
         } else if (id == R.id.log_out) {
-            LoginManager.getInstance().logOut();
-            goLoginScreen();
+            LoginManager.getInstance().logOut()
+            goLoginScreen()
         }
         drawer_layout.closeDrawer(GravityCompat.START)
         return true
