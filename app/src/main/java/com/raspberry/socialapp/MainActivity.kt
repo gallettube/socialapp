@@ -9,16 +9,37 @@ import android.support.v7.app.ActionBarDrawerToggle
 import android.support.v7.app.AppCompatActivity
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.TextView
 import com.facebook.AccessToken
 import com.facebook.login.LoginManager
+import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.FirebaseUser
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.app_bar_main.*
+import kotlinx.android.synthetic.main.content_main.*
 
 class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        var user : FirebaseUser? = FirebaseAuth.getInstance().currentUser
+
+        if(user != null) {
+            var name: String? = user.displayName
+            var email: String? = user.email
+            var uid: String? = user.uid
+
+            nameTextView.setText(name)
+            emailTextView.setText(email)
+            uidTextView.setText(uid)
+        } else {
+            goLoginScreen()
+        }
+
+
 
 
 
@@ -41,9 +62,9 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
 
         nav_view.setNavigationItemSelectedListener(this)
 
-        if(AccessToken.getCurrentAccessToken() == null){
-            goLoginScreen()
-        }
+//        if(AccessToken.getCurrentAccessToken() == null){
+//            goLoginScreen()
+//        }
     }
 
     private fun goLoginScreen() {

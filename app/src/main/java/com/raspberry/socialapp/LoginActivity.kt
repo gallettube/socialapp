@@ -83,6 +83,7 @@ class LoginActivity : AppCompatActivity() {
 
     override fun onStop() {
         super.onStop()
+        FirebaseAuth.getInstance().signOut()
         FirebaseAuth.getInstance()!!.removeAuthStateListener(firebaseAuthListener!!)
     }
 
