@@ -11,6 +11,8 @@ import android.view.Menu
 import android.view.MenuItem
 import com.facebook.AccessToken
 import com.facebook.login.LoginManager
+import com.facebook.FacebookSdk
+import com.facebook.appevents.AppEventsLogger
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.app_bar_main.*
 
