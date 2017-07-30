@@ -1,27 +1,27 @@
 {
   "project_info": {
-    "project_number": "764972703418",
-    "firebase_url": "https://socialapp-eb122.firebaseio.com",
-    "project_id": "socialapp-eb122",
-    "storage_bucket": "socialapp-eb122.appspot.com"
+    "project_number": "629173065516",
+    "firebase_url": "https://social-app-d48d7.firebaseio.com",
+    "project_id": "social-app-d48d7",
+    "storage_bucket": "social-app-d48d7.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:764972703418:android:a1aea4328c3089f4",
+        "mobilesdk_app_id": "1:629173065516:android:a1aea4328c3089f4",
         "android_client_info": {
           "package_name": "com.raspberry.socialapp"
         }
       },
       "oauth_client": [
         {
-          "client_id": "764972703418-885qsjols60s46j8f6juek9m9pcc43ep.apps.googleusercontent.com",
+          "client_id": "629173065516-qu94abpgi0tsi6ejb7v5mg3pbdanf04e.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyC8oGw25ryrVCwxyiwdp8oKWUlIQFL6wAU"
+          "current_key": "AIzaSyCkteR7kSxRUcp1H1Ob_dhgDzI1zocZgVs"
         }
       ],
       "services": {
