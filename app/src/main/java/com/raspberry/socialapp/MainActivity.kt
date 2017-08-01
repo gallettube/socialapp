@@ -70,6 +70,12 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         startActivity(intent)
     }
 
+    private fun goProfilePage() {
+        val intent = Intent(this, profilePage::class.java)
+        intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP or Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK)
+        startActivity(intent)
+    }
+
 
     override fun onBackPressed() {
         if (drawer_layout.isDrawerOpen(GravityCompat.START)) {
@@ -109,7 +115,9 @@ class MainActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelecte
         } else if (id == R.id.log_out) {
             LoginManager.getInstance().logOut()
             goLoginScreen()
-        }
+        } else if (id == R.id.editProfile) {
+        goProfilePage()
+    }
         drawer_layout.closeDrawer(GravityCompat.START)
         return true
     }
