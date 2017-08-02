@@ -3,6 +3,7 @@ package com.raspberry.socialapp.ui
 import android.content.Intent
 import android.os.Bundle
 import android.support.design.widget.NavigationView
+import android.support.design.widget.Snackbar
 import android.support.v4.view.GravityCompat
 import android.support.v7.app.ActionBarDrawerToggle
 import android.support.v7.app.AppCompatActivity
@@ -15,8 +16,7 @@ import kotlinx.android.synthetic.main.app_bar_main.*
 
 open class BaseActivity : AppCompatActivity(), NavigationView.OnNavigationItemSelectedListener {
 
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
+    fun onCreateDrawable(){
         setSupportActionBar(toolbar)
         val toggle = ActionBarDrawerToggle(
                 this,
@@ -24,9 +24,20 @@ open class BaseActivity : AppCompatActivity(), NavigationView.OnNavigationItemSe
                 toolbar,
                 R.string.navigation_drawer_open,
                 R.string.navigation_drawer_close)
-        drawer_layout.setDrawerListener(toggle)
+        drawer_layout.addDrawerListener(toggle)
         toggle.syncState()
         nav_view.setNavigationItemSelectedListener(this)
+        search.setOnClickListener { view ->
+            Snackbar.make( view,
+                    "Replace with your own action",
+                     Snackbar.LENGTH_LONG)
+                    .setAction("Action", null).show()
+        }
+    }
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+
     }
 
     internal fun goLoginScreen() {

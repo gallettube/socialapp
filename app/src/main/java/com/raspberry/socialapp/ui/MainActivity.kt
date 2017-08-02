@@ -12,7 +12,7 @@ class MainActivity : BaseActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        //super.onCreateDrawer()
+        super.onCreateDrawable()
         var user : FirebaseUser? = FirebaseAuth.getInstance().currentUser
         if(user != null) {
             var name: String? = user.displayName
@@ -25,12 +25,7 @@ class MainActivity : BaseActivity() {
             super.goLoginScreen()
         }
 
-        /*search.setOnClickListener { view ->
-            Snackbar.make( view,
-                           "Replace with your own action",
-                           Snackbar.LENGTH_LONG)
-                           .setAction("Action", null).show()
-        }*/
+
 //        if(AccessToken.getCurrentAccessToken() == null){
 //            goLoginScreen()
 //        }
